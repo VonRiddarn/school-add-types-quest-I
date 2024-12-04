@@ -10,8 +10,8 @@ import {
 import { commonColor, numberOfColors } from "./func/dog";
 
 // Fixa så funktionen gör det den ska
-const printSum = (a, b) => {
-	console.log(0);
+const printSum = (a: number, b: number) => {
+	console.log(a +b);
 };
 
 printSum(1, 2);
