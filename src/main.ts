@@ -1,5 +1,6 @@
 import "./styles.css";
-import { averageAge, averageNumberOfHobbies } from "./func/user-functions";
+import getUserAverage from "./func/user-functions";
+
 import {
 	averageMonsterAge,
 	averageNumberOfTentacles,
@@ -8,6 +9,8 @@ import {
 	prettyPrintMonster,
 } from "./func/monster";
 import { commonColor, numberOfColors } from "./func/dog";
+import User from "./func/user";
+import UserKey from "./func/UserKey";
 
 // Fixa så funktionen gör det den ska
 const printSum = (a: number, b: number) => {
@@ -17,7 +20,7 @@ const printSum = (a: number, b: number) => {
 printSum(1, 2);
 printSum(5, 12);
 
-const arr = [
+const arr: User[] = [
 	{
 		name: "Stina",
 		hobby: ["läsa böcker"],
@@ -46,9 +49,9 @@ const arr = [
 ];
 
 console.log(`Vi har ${arr.length} stycken användare.`);
-console.log(`Medelåldern på alla användare är ${averageAge(arr)}`);
+console.log(`Medelåldern på alla användare är ${getUserAverage(arr, UserKey.Age)}`);
 console.log(
-	`Medelantalet hobbies per användare är ${averageNumberOfHobbies(arr)}`
+	`Medelantalet hobbies per användare är ${getUserAverage(arr, UserKey.Hobby)}`
 );
 // skriv ut "Den personen med flest hobbies har Y stycken hobbies". Byt ut Y mot ett funktionsanrop. Skapa den funktionen.
 // skriv ut "Den äldsta personen är A och den yngsta är B". Byt ut A och B mot funktionsanrop. Ska de två funktionerna
