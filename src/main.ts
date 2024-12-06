@@ -1,7 +1,7 @@
 import "./styles.css";
 
 import { getMonsterDummyArray, Monster } from "./func/monster";
-import { commonColor, getDogsDummyArray } from "./func/dog";
+import { getDogsDummyArray } from "./func/dog";
 import User, { getUserDummyArray } from "./func/user";
 import { Utilities } from "./func/utilities";
 
@@ -21,7 +21,7 @@ const dogs = getDogsDummyArray();
 
 console.log(`Vi har ${dogs.length} stycken hundar.`);
 console.log(`Hundarna har ${Utilities.getUniqueValues(dogs, "color").length} antal unika färger.`);
-console.log(`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`);
+console.log(`Den vanligaste färgen bland alla hundar är: ${Utilities.getMostCommonValue(dogs, "color")}.`);
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
 console.log(Utilities.objectToStringAll(dogs));
 

@@ -90,4 +90,20 @@ export const Utilities = Object.freeze({
 	// [... *set*] -- Creates an array from the set
 	getUniqueValues: <T>(obj: T[], keyToCheck: keyof T) => [...new Set(obj.map(inst => inst[keyToCheck]))],
 
+	getMostCommonValue: <T>(obj: T[], keyToCheck: keyof T) => {
+		const valueCount = new Map<unknown, number>();
+
+		obj.forEach(inst => {
+			
+			// If the key exists in the map, get the count - else get 0
+			const count = valueCount.get(inst[keyToCheck]) || 0;
+			valueCount.set(inst[keyToCheck], count + 1);
+		});
+
+		// Tricky little bugger right here.
+		// [...colorCount.entries] gets an array of arrays that are key value pairs: [key, value]
+		// A = Prevoius value (accumalated value) OBSERVE: Ths value can increase as it is saved
+		// B = The current vale - latest value
+		return [...valueCount.entries()].reduce((a, b) => (a[1] > b[1] ? a : b))[0];
+	},
 });
