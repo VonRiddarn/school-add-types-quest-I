@@ -1,7 +1,7 @@
 import "./styles.css";
 
 import { getAllNoWingedMonster, getMonsterDummyArray, Monster, numberOfMonstersWithWings } from "./func/monster";
-import { commonColor, getDogsDummyArray, numberOfColors } from "./func/dog";
+import { commonColor, getDogsDummyArray } from "./func/dog";
 import User, { getUserDummyArray } from "./func/user";
 import { Utilities } from "./func/utilities";
 
