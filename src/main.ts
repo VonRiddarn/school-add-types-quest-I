@@ -5,8 +5,9 @@ import {
 	averageMonsterAge,
 	averageNumberOfTentacles,
 	getAllNoWingedMonster,
+	Monster,
+	monsterToStringAll,
 	numberOfMonstersWithWings,
-	prettyPrintMonster,
 } from "./func/monster";
 import { commonColor, numberOfColors } from "./func/dog";
 import User from "./func/user";
@@ -73,9 +74,10 @@ console.log(`Hundarna har ${numberOfColors(dogs)} antal unika färger.`);
 console.log(
 	`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`
 );
+// TODO: Make pretty print dogs
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
 
-const monsters = [
+const monsters: Monster[] = [
 	{ name: "Florg", age: 1266, tentacles: 29, eyes: 666, hasWings: true },
 	{ name: "Smirch", age: 78, tentacles: 68, eyes: 2, hasWings: false },
 	{ name: "Gorge", age: 25, tentacles: 2, eyes: 2, hasWings: false },
@@ -104,7 +106,9 @@ console.log(
 );
 
 // loopa igenom alla monster och skriv ut dem med prettyPrintMonster
-prettyPrintMonster(monsters[0]);
+// Changed prettyPrintMonster to monsterToString / and added monsterToStringAll
+// This solution adheres to separation of concerns
+console.log(monsterToStringAll(monsters));
 
 console.log(
 	`Antalet monster som har vingar är ${numberOfMonstersWithWings(monsters)}`
