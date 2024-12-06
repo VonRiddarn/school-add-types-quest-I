@@ -6,14 +6,6 @@ export type Monster = {
 	hasWings: boolean;
 };
 
-export const numberOfMonstersWithWings = (m) => {
-	return 0;
-};
-
-export const getAllNoWingedMonster = (m) => {
-	return [];
-};
-
 export const getMonsterDummyArray = (): Monster[] => [
 	{ name: "Florg", age: 1266, tentacles: 29, eyes: 666, hasWings: true },
 	{ name: "Smirch", age: 78, tentacles: 68, eyes: 2, hasWings: false },
