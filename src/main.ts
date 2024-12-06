@@ -6,12 +6,8 @@ import User, { getUserDummyArray } from "./func/user";
 import { Utilities } from "./func/utilities";
 
 // Fixa så funktionen gör det den ska
-const printSum = (a: number, b: number) => {
-	console.log(a +b);
-};
-
-printSum(1, 2);
-printSum(5, 12);
+Utilities.printSum(1, 2);
+Utilities.printSum(5, 12);
 
 const arr: User[] = getUserDummyArray();
 

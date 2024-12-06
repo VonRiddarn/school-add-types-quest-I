@@ -1,5 +1,10 @@
 export const Utilities = Object.freeze({
 
+	// Note: This does not adhere to COS, since we use the console as hard coded interface.
+	printSum: (a: number, b: number): void => {
+		console.log(a +b);
+	},
+
 	objectToStringAll: <T>(obj: T[]): string => {
 		let s: string = "";
 
