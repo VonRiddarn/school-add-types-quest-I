@@ -20,27 +20,27 @@ printSum(5, 12);
 const arr: User[] = [
 	{
 		name: "Stina",
-		hobby: ["läsa böcker"],
+		hobbies: ["läsa böcker"],
 		age: 67,
 	},
 	{
 		name: "Lisa",
-		hobby: ["åka skidor"],
+		hobbies: ["åka skidor"],
 		age: 26,
 	},
 	{
 		name: "Mio",
-		hobby: ["spela rollspel", "spela brädspel"],
+		hobbies: ["spela rollspel", "spela brädspel"],
 		age: 22,
 	},
 	{
 		name: "Olle",
-		hobby: ["sportklättring", "vandra", "sticka", "virka"],
+		hobbies: ["sportklättring", "vandra", "sticka", "virka"],
 		age: 38,
 	},
 	{
 		name: "Leo",
-		hobby: ["matlagning", "bakning"],
+		hobbies: ["matlagning", "bakning"],
 		age: 17,
 	},
 ];
@@ -48,7 +48,7 @@ const arr: User[] = [
 console.log(`Vi har ${arr.length} stycken användare.`);
 console.log(`Medelåldern på alla användare är ${Utilities.getAverage(arr, "age")}`);
 console.log(
-	`Medelantalet hobbies per användare är ${getAverageUserHobbies(arr)}`
+	`Medelantalet hobbies per användare är ${Utilities.getAverageFromArray(arr, "hobbies")}`
 );
 // skriv ut "Den personen med flest hobbies har Y stycken hobbies". Byt ut Y mot ett funktionsanrop. Skapa den funktionen.
 // skriv ut "Den äldsta personen är A och den yngsta är B". Byt ut A och B mot funktionsanrop. Ska de två funktionerna

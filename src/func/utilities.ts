@@ -25,7 +25,20 @@ export const Utilities = Object.freeze({
 	},
 
 	getAverageFromArray: <T>(obj: T[], keyArrayToAverage: keyof T):number => {
-		throw new Error("Not implemented");
+		let sum = 0;
+
+		for (const inst of obj) {
+			const currentValue = inst[keyArrayToAverage];
+
+			if (!Array.isArray(currentValue)) {
+				console.error("The key provided is not an array!");
+				return 0;
+			}
+
+			sum += currentValue.length;
+		}
+
+		return sum / obj.length;
 	},
 
 	getAverage: <T>(obj: T[], keyToAverage: keyof T):number => {
