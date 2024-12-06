@@ -115,10 +115,13 @@ export const Utilities = Object.freeze({
 	mapToString: (map: Map<unknown, number>) => {
 		let str = "";
 
-		// TODO: Maybe order? 
-		for (const [key, value] of map.entries()) {
-			str += `${key} : ${value}\n`;
-		}
+		// [...] Make array of keyvalue pairs, typ: [['foo', 1],['bar', 23]]
+		// Sort based on values a[1] = 1, b[1] = 23 | sort is based on the returned values absolution - 0 +
+		// Flipped for decending order
+		// Do a foreach and deconstruct the pairs ['foo', 1] | key = 'foo' , value = 1
+		[...map.entries()].sort((a, b) => b[1] - a[1]).forEach(([key, value]) => {
+  			str += `${key} : ${value}\n`;
+		});
 
 		return str;
 	},
