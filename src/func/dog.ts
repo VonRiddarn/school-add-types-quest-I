@@ -28,28 +28,3 @@ export const commonColor = (d:Dog[]) => {
 	// B = The current vale - latest value
 	return [...colorCount.entries()].reduce((a, b) => (a[1] > b[1] ? a : b))[0];
 }
-
-export const dogToStringAll = (d: Dog[]): string => {
-	let s: string = "";
-
-	d.forEach((dog) => {
-		s += `${dogToString(dog)}\n`;
-	});
-
-	return s;
-}
-
-export const dogToString = (d: Dog) => {
-		let s: string = "----------\n";
-
-	for (const key in d) 
-	{
-        if (Object.prototype.hasOwnProperty.call(d, key)) {
-            s += `${key}: ${d[key as keyof Dog]}\n`;
-        }
-	}
-
-	s+= "----------";
-
-	return s;
-}

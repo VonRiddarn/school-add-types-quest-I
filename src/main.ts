@@ -1,17 +1,13 @@
 import "./styles.css";
-import getUserAverage from "./func/user-functions";
 
 import {
-	averageMonsterAge,
-	averageNumberOfTentacles,
 	getAllNoWingedMonster,
 	Monster,
-	monsterToStringAll,
 	numberOfMonstersWithWings,
 } from "./func/monster";
-import { commonColor, dogToStringAll, numberOfColors } from "./func/dog";
-import User from "./func/user";
-import UserKey from "./func/UserKey";
+import { commonColor, numberOfColors } from "./func/dog";
+import User, { getAverageUserHobbies } from "./func/user";
+import { Utilities } from "./func/utilities";
 
 // Fixa så funktionen gör det den ska
 const printSum = (a: number, b: number) => {
@@ -50,9 +46,9 @@ const arr: User[] = [
 ];
 
 console.log(`Vi har ${arr.length} stycken användare.`);
-console.log(`Medelåldern på alla användare är ${getUserAverage(arr, UserKey.Age)}`);
+console.log(`Medelåldern på alla användare är ${Utilities.getAverage(arr, "age")}`);
 console.log(
-	`Medelantalet hobbies per användare är ${getUserAverage(arr, UserKey.Hobby)}`
+	`Medelantalet hobbies per användare är ${getAverageUserHobbies(arr)}`
 );
 // skriv ut "Den personen med flest hobbies har Y stycken hobbies". Byt ut Y mot ett funktionsanrop. Skapa den funktionen.
 // skriv ut "Den äldsta personen är A och den yngsta är B". Byt ut A och B mot funktionsanrop. Ska de två funktionerna
@@ -75,7 +71,7 @@ console.log(
 	`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`
 );
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
-console.log(dogToStringAll(dogs));
+console.log(Utilities.objectToStringAll(dogs));
 
 const monsters: Monster[] = [
 	{ name: "Florg", age: 1266, tentacles: 29, eyes: 666, hasWings: true },
@@ -98,17 +94,15 @@ const monsters: Monster[] = [
 ];
 
 console.log(`Vi har ${monsters.length} stycken monster.`);
-console.log(`Medelåldern på alla monster är ${averageMonsterAge(monsters)}`);
+console.log(`Medelåldern på alla monster är ${Utilities.getAverage(monsters, "age")}`);
 console.log(
-	`Medelantalet tentakler för alla monster är ${averageNumberOfTentacles(
-		monsters
-	)}`
+	`Medelantalet tentakler för alla monster är ${Utilities.getAverage(monsters, "tentacles")}`
 );
 
 // loopa igenom alla monster och skriv ut dem med prettyPrintMonster
 // Changed prettyPrintMonster to monsterToString / and added monsterToStringAll
 // This solution adheres to separation of concerns
-console.log(monsterToStringAll(monsters));
+console.log(Utilities.objectToStringAll(monsters));
 
 console.log(
 	`Antalet monster som har vingar är ${numberOfMonstersWithWings(monsters)}`
@@ -116,3 +110,10 @@ console.log(
 
 const noWingedMonster = getAllNoWingedMonster(monsters);
 console.log(noWingedMonster);
+
+console.log("User age average:");
+console.log(Utilities.getAverage(arr, "age"));
+console.log("Monster age average:");
+console.log(Utilities.getAverage(monsters, "age"));
+console.log("Monster tentacle average:");
+console.log(Utilities.getAverage(monsters, "tentacles"));
