@@ -9,7 +9,7 @@ import {
 	monsterToStringAll,
 	numberOfMonstersWithWings,
 } from "./func/monster";
-import { commonColor, numberOfColors } from "./func/dog";
+import { commonColor, dogToStringAll, numberOfColors } from "./func/dog";
 import User from "./func/user";
 import UserKey from "./func/UserKey";
 
@@ -74,8 +74,8 @@ console.log(`Hundarna har ${numberOfColors(dogs)} antal unika färger.`);
 console.log(
 	`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`
 );
-// TODO: Make pretty print dogs
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
+console.log(dogToStringAll(dogs));
 
 const monsters: Monster[] = [
 	{ name: "Florg", age: 1266, tentacles: 29, eyes: 666, hasWings: true },
