@@ -8,8 +8,6 @@ import { Utilities } from "./func/utilities";
 /////
 // GENERAL
 /////
-
-// Teachers comment: Fixa så funktionen gör det den ska
 Utilities.printSum(1, 2);
 Utilities.printSum(5, 12);
 
