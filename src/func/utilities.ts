@@ -5,16 +5,6 @@ export const Utilities = Object.freeze({
 		console.log(a +b);
 	},
 
-	objectToStringAll: <T>(obj: T[]): string => {
-		let s: string = "";
-
-		for (const inst of obj) {
-			s += `${Utilities.objectToString(inst)}\n`;
-		}
-
-		return s;
-	},
-
 	objectToString: <T>(obj: T): string => {
 		let s: string = "----------\n";
 
@@ -28,6 +18,39 @@ export const Utilities = Object.freeze({
 
 		return s;
 	},
+
+	objectToStringAll: <T>(obj: T[]): string => {
+		let s: string = "";
+
+		for (const inst of obj) {
+			s += `${Utilities.objectToString(inst)}\n`;
+		}
+
+		return s;
+	},
+
+    filterWithMargin: <T>(array: T[], key: keyof T, margin = 0): T[] => array.filter(inst => {
+
+		const value = inst[key];
+		
+		if (typeof value !== 'number') {
+			console.error("The key provided does not contain a number!");
+			return false;
+		}
+
+		return value >= margin;
+	}),
+
+	filterWithBoolean: <T>(array: T[], key: keyof T, invert = false): T[] => array.filter(inst => {
+		const value = inst[key];
+
+		if (typeof value != 'boolean') {
+			console.error("The key provided does not contain a boolean!");
+			return invert ? true : false;
+		}
+
+		return invert ? !(value as boolean) : value as boolean;
+	}),
 
 	getAverageFromArray: <T>(obj: T[], keyArrayToAverage: keyof T):number => {
 		let sum = 0;

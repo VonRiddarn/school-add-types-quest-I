@@ -38,11 +38,9 @@ console.log(
 // This solution adheres to separation of concerns
 console.log(Utilities.objectToStringAll(monsters));
 
-console.log(
-	`Antalet monster som har vingar är ${numberOfMonstersWithWings(monsters)}`
-);
+console.log(`Antalet monster som har vingar är ${Utilities.filterWithBoolean(monsters, "hasWings").length}`);
 
-const noWingedMonster = getAllNoWingedMonster(monsters);
+const noWingedMonster = Utilities.filterWithBoolean(monsters, "hasWings", true);
 console.log(noWingedMonster);
 
 console.log("User age average:");
