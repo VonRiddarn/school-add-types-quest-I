@@ -52,6 +52,11 @@ export const Utilities = Object.freeze({
 		return invert ? !(value as boolean) : value as boolean;
 	}),
 
+	getHighestValue: <T>(obj: T[], keyToCheck: keyof T): number => Math.max(...obj.map(inst => inst[keyToCheck] as number)),
+	getLowestValue: <T>(obj: T[], keyToCheck: keyof T): number => Math.min(...obj.map(inst => inst[keyToCheck] as number)),
+	getHighestValueLength: <T>(obj: T[], keyArrayToCheck: keyof T): number => Math.max(...obj.map(inst => (inst[keyArrayToCheck] as []).length)),
+	getLowestValueLength: <T>(obj: T[], keyArrayToCheck: keyof T): number => Math.min(...obj.map(inst => (inst[keyArrayToCheck] as []).length)),
+
 	getAverageFromArray: <T>(obj: T[], keyArrayToAverage: keyof T):number => {
 		let sum = 0;
 

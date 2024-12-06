@@ -14,8 +14,10 @@ const arr: User[] = getUserDummyArray();
 console.log(`Vi har ${arr.length} stycken användare.`);
 console.log(`Medelåldern på alla användare är ${Utilities.getAverage(arr, "age")}`);
 console.log(`Medelantalet hobbies per användare är ${Utilities.getAverageFromArray(arr, "hobbies")}`);
-// skriv ut "Den personen med flest hobbies har Y stycken hobbies". Byt ut Y mot ett funktionsanrop. Skapa den funktionen.
-// skriv ut "Den äldsta personen är A och den yngsta är B". Byt ut A och B mot funktionsanrop. Ska de två funktionerna
+console.log(`Den personen med flest hobbies har ${Utilities.getHighestValueLength(arr, "hobbies")} stycken hobbies`);
+let msg = `Den äldsta personen är ${Utilities.getHighestValue(arr, "age")}`;
+msg += ` och den yngsta är ${Utilities.getLowestValue(arr, "age")}`;
+console.log(msg);
 
 const dogs = getDogsDummyArray();
 
