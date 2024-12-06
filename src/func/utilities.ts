@@ -62,5 +62,9 @@ export const Utilities = Object.freeze({
 
 		return sum / obj.length;
 	},
+	// When creating a set duplicate values are removed
+	// Map(inst => inst[keyToCheck]) -- Creates an array of the values inside all the keys
+	// [... *set*] -- Creates an array from the set
+	getUniqueValues: <T>(obj: T[], keyToCheck: keyof T) => [...new Set(obj.map(inst => inst[keyToCheck]))],
 
 });

@@ -13,19 +13,15 @@ const arr: User[] = getUserDummyArray();
 
 console.log(`Vi har ${arr.length} stycken användare.`);
 console.log(`Medelåldern på alla användare är ${Utilities.getAverage(arr, "age")}`);
-console.log(
-	`Medelantalet hobbies per användare är ${Utilities.getAverageFromArray(arr, "hobbies")}`
-);
+console.log(`Medelantalet hobbies per användare är ${Utilities.getAverageFromArray(arr, "hobbies")}`);
 // skriv ut "Den personen med flest hobbies har Y stycken hobbies". Byt ut Y mot ett funktionsanrop. Skapa den funktionen.
 // skriv ut "Den äldsta personen är A och den yngsta är B". Byt ut A och B mot funktionsanrop. Ska de två funktionerna
 
 const dogs = getDogsDummyArray();
 
 console.log(`Vi har ${dogs.length} stycken hundar.`);
-console.log(`Hundarna har ${numberOfColors(dogs)} antal unika färger.`);
-console.log(
-	`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`
-);
+console.log(`Hundarna har ${Utilities.getUniqueValues(dogs, "color").length} antal unika färger.`);
+console.log(`Den vanligaste färgen bland alla hundar är: ${commonColor(dogs)}.`);
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
 console.log(Utilities.objectToStringAll(dogs));
 

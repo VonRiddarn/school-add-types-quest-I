@@ -3,12 +3,6 @@ type Dog = {
 	color: string;
 };
 
-
-// When creating a set duplicate values are removed
-// d.map (dog) => dog.color -- Creates an array of colors
-// Take less space than reduce as we wont have to compare exisitng values and store the unique ones manually
-export const numberOfColors = (d: Dog[]) => new Set(d.map((dog: Dog) => dog.color)).size;
-
 export const commonColor = (d:Dog[]) => {
 	const colorCount = new Map<string, number>();
 
