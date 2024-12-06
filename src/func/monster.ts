@@ -6,17 +6,17 @@ export type Monster = {
 	hasWings: boolean;
 };
 
-export const prettyPrintMonsterAll = (m: Monster[]) => {
+export const monsterToStringAll = (m: Monster[]): string => {
 	let s: string = "";
 
 	m.forEach((monster) => {
-		s += `${prettyPrintMonster(monster)}\n`;
+		s += `${monsterToString(monster)}\n`;
 	});
 
 	return s;
 }
 
-export const prettyPrintMonster = (m: Monster) => {
+export const monsterToString = (m: Monster): string => {
 	let s: string = "----------\n";
 
 	for (const key in m) 
