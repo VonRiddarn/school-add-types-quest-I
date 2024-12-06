@@ -35,7 +35,7 @@ console.log(`Vi har ${dogs.length} stycken hundar.`);
 console.log(`Hundarna har ${Utilities.getUniqueValues(dogs, "color").length} antal unika färger.`);
 console.log(`Den vanligaste färgen bland alla hundar är: ${Utilities.getMostCommonValue(dogs, "color")}.`);
 console.log(Utilities.mapToString(Utilities.getObjectsPerValue(dogs, "color")));
-console.log(Utilities.objectToStringAll(dogs));
+console.log(Utilities.objectToStringAll(dogs, "Dogs"));
 
 
 /////
@@ -45,7 +45,7 @@ const monsters: Monster[] = getMonsterDummyArray();
 console.log(`Vi har ${monsters.length} stycken monster.`);
 console.log(`Medelåldern på alla monster är ${Utilities.getAverage(monsters, "age")}`);
 console.log(`Medelantalet tentakler för alla monster är ${Utilities.getAverage(monsters, "tentacles")}`);
-console.log(Utilities.objectToStringAll(monsters));
+console.log(Utilities.objectToStringAll(monsters, "Monsters"));
 console.log(`Antalet monster som har vingar är ${Utilities.filterWithBoolean(monsters, "hasWings").length}`);
 
 const noWingedMonster = Utilities.filterWithBoolean(monsters, "hasWings", true);

@@ -6,7 +6,7 @@ export const Utilities = Object.freeze({
 	},
 
 	objectToString: <T>(obj: T): string => {
-		let s: string = "----------\n";
+		let s: string = "";
 
 		for (const key in obj) {
 			if (Object.prototype.hasOwnProperty.call(obj, key)) {
@@ -14,17 +14,17 @@ export const Utilities = Object.freeze({
 			}
 		}
 
-		s += "----------";
-
 		return s;
 	},
 
-	objectToStringAll: <T>(obj: T[]): string => {
-		let s: string = "";
+	objectToStringAll: <T>(obj: T[], header: string): string => {
+		let s: string = `----- ${header} -----\n`;
 
 		for (const inst of obj) {
 			s += `${Utilities.objectToString(inst)}\n`;
 		}
+
+		s+= "----------";
 
 		return s;
 	},
