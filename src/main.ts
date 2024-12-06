@@ -5,12 +5,19 @@ import { getDogsDummyArray } from "./func/dog";
 import User, { getUserDummyArray } from "./func/user";
 import { Utilities } from "./func/utilities";
 
-// Fixa så funktionen gör det den ska
+/////
+// GENERAL
+/////
+
+// Teachers comment: Fixa så funktionen gör det den ska
 Utilities.printSum(1, 2);
 Utilities.printSum(5, 12);
 
-const arr: User[] = getUserDummyArray();
 
+/////
+// USER RELATED
+/////
+const arr: User[] = getUserDummyArray();
 console.log(`Vi har ${arr.length} stycken användare.`);
 console.log(`Medelåldern på alla användare är ${Utilities.getAverage(arr, "age")}`);
 console.log(`Medelantalet hobbies per användare är ${Utilities.getAverageFromArray(arr, "hobbies")}`);
@@ -19,12 +26,16 @@ let msg = `Den äldsta personen är ${Utilities.getHighestValue(arr, "age")}`;
 msg += ` och den yngsta är ${Utilities.getLowestValue(arr, "age")}`;
 console.log(msg);
 
-const dogs = getDogsDummyArray();
 
+/////
+// DOG RELATED
+/////
+const dogs = getDogsDummyArray();
 console.log(`Vi har ${dogs.length} stycken hundar.`);
 console.log(`Hundarna har ${Utilities.getUniqueValues(dogs, "color").length} antal unika färger.`);
 console.log(`Den vanligaste färgen bland alla hundar är: ${Utilities.getMostCommonValue(dogs, "color")}.`);
 // vi vill ha en pretty print som skriver ut alla färger som hundarna har och hur många hundar det finns av varje färg
+console.log(Utilities.mapToString(Utilities.getObjectsPerValue(dogs, "color")));
 console.log(Utilities.objectToStringAll(dogs));
 
 const monsters: Monster[] = getMonsterDummyArray();
